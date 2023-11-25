@@ -355,12 +355,13 @@ class GameScene extends Phaser.Scene
     }
 }
 
-const config = {
+
+export default id => new Phaser.Game({
     type: Phaser.AUTO,
     backgroundColor: '#000000',
     scale: {
         mode: Phaser.Scale.RESIZE,
-        parent: 'phaser-example',
+        parent: id,
         width: 640,
         height: 960,
         min: {
@@ -380,8 +381,4 @@ const config = {
             debug: false
         }
     }
-};
-
-export default function () {
-    return new Phaser.Game(config);
-}
+});
